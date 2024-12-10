@@ -2,12 +2,13 @@ package com.example.tasksitinerary.com.ebookfrenzy.tasksitinerary
 
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import android.content.Context
 import android.content.ContentValues
+import android.content.Context
 
 
-class MyDBHandler(context: Context, name: String?,
-                  factory: SQLiteDatabase.CursorFactory?, version: Int) :
+class MyDBHandler(
+    context: Context, name: String?,
+    factory: SQLiteDatabase.CursorFactory?, version: Int) :
     SQLiteOpenHelper(context, DATABASE_NAME, factory, DATABASE_VERSION)
 {
     override fun onCreate(db: SQLiteDatabase) {
@@ -15,8 +16,7 @@ class MyDBHandler(context: Context, name: String?,
                 TABLE_TASKS + "("
                 + COLUMN_ID + " INTEGER PRIMARY KEY," +
                 COLUMN_TASK_NAME + " TEXT," +
-                COLUMN_IMPORTANCE + " TEXT," +
-                COLUMN_DATE + " TEXT" + ")")
+                COLUMN_IMPORTANCE + " TEXT)")
         db.execSQL(CREATE_TASKS_TABLE)
     }
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int,
@@ -26,21 +26,18 @@ class MyDBHandler(context: Context, name: String?,
     }
 
     companion object {
-        private val DATABASE_VERSION = 1
+        private val DATABASE_VERSION = 2
         private val DATABASE_NAME = "tasksDB.db"
         val TABLE_TASKS = "tasks"
         val COLUMN_ID = "_id"
         val COLUMN_TASK_NAME = "taskname"
         val COLUMN_IMPORTANCE = "importance"
-        val COLUMN_DATE = "date"
-
     }
 
     fun addTask(task: Task) {
         val values = ContentValues()
         values.put(COLUMN_TASK_NAME, task.taskName)
         values.put(COLUMN_IMPORTANCE, task.taskImportance)
-        values.put(COLUMN_DATE, task.date)
         val db = this.writableDatabase
         db.insert(TABLE_TASKS, null, values)
         db.close()
@@ -57,8 +54,7 @@ class MyDBHandler(context: Context, name: String?,
             val id = Integer.parseInt(cursor.getString(0))
             val name = cursor.getString(1)
             val importance = cursor.getString(2)
-            val date = cursor.getString(3)
-            task = Task(id, name, importance, date)
+            task = Task(id, name, importance)
             cursor.close()
         }
         db.close()
@@ -95,13 +91,11 @@ class MyDBHandler(context: Context, name: String?,
                 val id = cursor.getInt(0)
                 val name = cursor.getString(1)
                 val importance = cursor.getString(2)
-                val date = cursor.getString(3)
-                taskList.add(Task(id, name, importance, date))
+                taskList.add(Task(id, name, importance))
             } while (cursor.moveToNext())
         }
         cursor.close()
         db.close()
         return taskList
     }
-
 }

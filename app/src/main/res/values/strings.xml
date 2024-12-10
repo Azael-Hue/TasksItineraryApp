@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">TasksItinerary</string>
+    <string name="task_name">Task Name:</string>
+    <string name="task_importance">Task Importance</string>
+    <string name="task_hint">Task</string>
+    <string name="create_task">Add Task</string>
+    <string name="home_fragment_title">To Do List</string>
 
     <string-array name="task_importance">
         <item>Low</item>

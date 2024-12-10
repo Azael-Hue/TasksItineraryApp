@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout
+<TableLayout
 
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,58 +10,62 @@
     android:orientation="horizontal"
     tools:context=".AddTask">
 
-    <TableLayout
+    <TableRow
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content" >
 
-        <TableRow
+        <TextView
+            android:id="@+id/textViewTaskName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/task_name"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editTextTaskName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:hint="@string/task_hint"
+            android:inputType="text" />
+    </TableRow>
 
-            <TextView
-                android:id="@+id/textViewTaskName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="Task Name:"
-                android:textSize="16sp" />
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
 
-            <EditText
-                android:id="@+id/editTextTaskName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:ems="10"
-                android:hint="Task"
-                android:inputType="text" />
-        </TableRow>
+        <TextView
+            android:id="@+id/textViewTaskImportance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/task_importance"
+            android:textSize="16sp" />
 
-        <TableRow
+        <Spinner
+            android:id="@+id/spinnerTaskImportnace"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:entries="@array/task_importance"
+            android:spinnerMode="dropdown" />
 
-            <TextView
-                android:id="@+id/textViewTaskImportance"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="Task Importance"
-                android:textSize="16sp" />
+    </TableRow>
 
-            <Spinner
-                android:id="@+id/spinnerTaskImportnace"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:entries="@array/task_importance"
-                android:spinnerMode="dropdown" />
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
 
-        </TableRow>
-
-        <TableRow
+        <Button
+            android:id="@+id/btnAddTask"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:onClick="addTask"
+            android:text="@string/create_task" />
+    </TableRow>
 
-    </TableLayout>
-
-</LinearLayout>
+</TableLayout>
