@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<!-- Linear layout, love to use it -->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,6 +13,7 @@
     android:orientation="vertical"
     tools:context=".Home">
 
+    <!-- The Title -->
     <TextView
         android:id="@+id/homeTitle"
 
@@ -22,6 +24,9 @@
         android:textAlignment="center"
         android:textSize="34sp" />
 
+    <!-- recycler View that occupies an adapter in the class file to
+            help us  populate the recycler with tasks using alongside
+            it th etask layout to display each task in a card -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
 

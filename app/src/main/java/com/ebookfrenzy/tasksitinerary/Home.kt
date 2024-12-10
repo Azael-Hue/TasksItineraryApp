@@ -1,12 +1,12 @@
 package com.ebookfrenzy.tasksitinerary
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tasksitinerary.com.ebookfrenzy.tasksitinerary.MyDBHandler
 
 class Home : Fragment() {

@@ -1,5 +1,9 @@
 package com.example.tasksitinerary.com.ebookfrenzy.tasksitinerary
 
+/// The task class consist of 3 elements
+// ID an Integer
+// task name, a string
+// and importance, also a string
 class Task {
     var id: Int = 0
     var taskName: String? = null

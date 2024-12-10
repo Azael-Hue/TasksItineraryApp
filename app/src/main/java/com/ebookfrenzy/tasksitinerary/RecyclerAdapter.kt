@@ -17,17 +17,24 @@ class RecyclerAdapter(private val taskList: List<Task>) : RecyclerView.Adapter<R
         val taskImportance: TextView = itemView.findViewById(R.id.textViewCardImportance)
     }
 
+    // called by the RecyclerView to obtain a ViewHolder object.
+    // It inflates the view hierarchy task_layout.xml file and creates an
+    // instance of our ViewHolder class initialized with the view hierarchy.
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.task_layout, parent, false)
+        val view = LayoutInflater.from(parent.context).
+            inflate(R.layout.task_layout, parent, false)
         return ViewHolder(view)
     }
 
+    // populates the view hierarchy within the
+    // ViewHolder object with the data to be displayed
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val task = taskList[position]
         holder.taskNameCheckBox.text = task.taskName
         holder.taskImportance.text = task.taskImportance
     }
 
+    // return the total number of tasks in the array
     override fun getItemCount(): Int {
         return taskList.size
     }

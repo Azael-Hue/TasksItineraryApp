@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- Use a cardview that allows us display each element in the database -->
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -12,11 +14,13 @@
     android:layout_marginHorizontal="16dp"
     android:layout_marginVertical="8dp" >
 
+    <!-- Its easier to use linear layouts, no need to keep strict constraints -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <!-- lets add a checkbox for now and then we can delete by swiping horixontally -->
         <CheckBox
             android:id="@+id/checkBoxTaskName"
 
@@ -28,6 +32,7 @@
             android:text="Sample Text"
             android:textSize="20dp" />
 
+        <!-- The bottom of the card tells us how important the task is -->
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent" >
@@ -36,6 +41,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+
                 android:layout_margin="10dp"
                 android:text="Importance:"
                 android:textSize="20sp" />
@@ -44,12 +50,11 @@
                 android:id="@+id/textViewCardImportance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 android:layout_margin="10dp"
                 android:textAlignment="center"
                 android:textSize="20sp" />
+
         </TableRow>
-
-
     </LinearLayout>
-
 </androidx.cardview.widget.CardView>

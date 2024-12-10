@@ -1,11 +1,11 @@
 package com.example.tasksitinerary.com.ebookfrenzy.tasksitinerary
 
+import android.content.Context
+import android.content.ContentValues
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import android.content.ContentValues
-import android.content.Context
 
-
+/// modified from the SQLDemo and provider projects
 class MyDBHandler(
     context: Context, name: String?,
     factory: SQLiteDatabase.CursorFactory?, version: Int) :

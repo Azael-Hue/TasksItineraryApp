@@ -6,6 +6,7 @@
     <string name="create_task">Add Task</string>
     <string name="home_fragment_title">To Do List</string>
 
+    <!-- For the Spinner in the add task fragment -->
     <string-array name="task_importance">
         <item>Low</item>
         <item>Medium</item>

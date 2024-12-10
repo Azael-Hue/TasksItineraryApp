@@ -1,16 +1,16 @@
 package com.ebookfrenzy.tasksitinerary
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
+import android.widget.Toast
+import android.widget.Spinner
 import android.view.ViewGroup
 import android.widget.EditText
-import android.widget.Spinner
-import android.widget.Toast
+import android.view.LayoutInflater
+import androidx.fragment.app.Fragment
+import com.example.tasksitinerary.com.ebookfrenzy.tasksitinerary.Task
 import com.ebookfrenzy.tasksitinerary.databinding.FragmentAddTaskBinding
 import com.example.tasksitinerary.com.ebookfrenzy.tasksitinerary.MyDBHandler
-import com.example.tasksitinerary.com.ebookfrenzy.tasksitinerary.Task
 
 class AddTask : Fragment() {
 
@@ -26,7 +26,7 @@ class AddTask : Fragment() {
         // Inflate the layout for this fragment
         val binding = FragmentAddTaskBinding.inflate(inflater, container, false)
 
-        // Initialize your views and the DB handler
+        // Initialize the views and the DB handler
         taskNameEditText = binding.editTextTaskName
         importanceSpinner = binding.spinnerTaskImportnace
         myDBHandler = MyDBHandler(requireContext(), null, null, 1)
