@@ -27,10 +27,10 @@ class Home : Fragment() {
         dbHandler = MyDBHandler(requireContext(), null, null, 1)
 
         // Fetch tasks from the database
-        val taskList = dbHandler.getAllTasks()
+        val taskList = dbHandler.getAllTasks().toMutableList()
 
         // Set up RecyclerView
-        recyclerAdapter = RecyclerAdapter(taskList)
+        recyclerAdapter = RecyclerAdapter(taskList, dbHandler)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = recyclerAdapter
 
